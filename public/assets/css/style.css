@@ -1,0 +1,216 @@
+body{
+
+	background-color: #CFEBEA;
+/*background-color: white;
+*/	text-align: center;
+	font-family: sans-serif;
+	
+	position: relative;
+
+}
+#arrow{
+
+	position: absolute;
+	top:350px;
+	left:560px;
+}
+
+.numOne{
+font-size: 20px;
+top:280px;
+	left:560px;
+
+}
+
+li{
+
+	width:100px;
+	display:block;
+}
+
+button {
+	background-color: white;
+	color: black;
+	width:60px;
+	padding:2px;
+}
+
+.addIt{
+width:60px;
+font-size: 12px;
+line-height: 14px;
+margin-top: 0px;
+}
+
+.removeIt{
+width:60px;
+font-size: 12px;
+line-height: 14px;
+margin-top: 0px;
+
+
+
+}
+
+.createIt{
+
+}
+
+.logos{
+width:60px;
+margin-bottom: 0px;
+background-color: white;
+
+}
+#cubName{
+display: inline;
+float: left;
+
+}
+
+h1 {
+
+	line-height: 30px;
+	padding:4px;
+	background-color: #389096;
+	color:white;
+}
+
+#trigger{
+	background-color: transparent;
+
+	color:black;
+	width: 130px;
+	height: 130px;
+	border-radius: 10px;
+	font-size: 16px;
+	background-image: url("../img/cubFind.png");
+	background-repeat:no-repeat;
+	background-position: center;
+	text-align:center;
+	padding-top:88px;
+	position:absolute;
+	top:570px;
+	left:550px;
+	z-index: 2;
+}
+#modal5{
+	min-height: 500px;
+}
+
+
+h2{
+
+
+	color: black;
+	background-color: white;
+}
+
+.forLogos{
+
+	width:90px;
+}
+
+.right{
+	margin-right: 160px;
+
+
+}
+
+.left{
+	margin-left: 160px;
+
+}
+
+.collection{
+
+	margin-left:30%;
+	float:left;
+}
+#exit{
+
+	float:left;
+}
+
+
+
+#made {
+	display: inline;
+	float: left;
+	margin-left: 1%;
+	width:400px;
+	
+
+}
+
+
+#skilled {
+	width:400px;
+	display: inline;
+	float: right;
+	
+	
+}
+
+
+.logos{
+	width:60px;
+}
+
+#find {
+	position: absolute;
+	bottom: -480px;
+	left: 20%;
+
+
+}
+
+#findIt{
+	position:absolute;
+	width: 150px;
+	height:80px;
+	top:480px;
+	left:540px;
+	text-align: justify;
+	padding:4px;
+	font-size: 18px;
+	
+}
+
+li{
+
+	width:900px;
+}
+
+.profile{
+
+	display: inline;
+	float:left;
+}
+
+#cubModal{
+
+	float:left;
+	width:250px;
+}
+
+#techName{
+	
+	margin:auto;
+	line-height:30px;
+	font-size:20px;
+	width:100px;
+	
+
+}
+
+
+#cubLogo {
+	position:absolute;
+	top:20px;
+	left:450px;
+	width:300px;
+	display:inline;
+	float:left;
+	margin-left: 1%;
+}
