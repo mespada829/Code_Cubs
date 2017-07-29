@@ -64,7 +64,7 @@ module.exports = function(app) {
         id: req.params.id
       }
     })
-    .then(function(dbcubs {
+    .then(function(dbcubs) {
       res.json(dbcubs);
     });
   });
