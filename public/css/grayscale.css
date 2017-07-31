@@ -290,9 +290,17 @@ position: absolute;
   padding-bottom: auto;
   line-height: 68%;
   height: 30px;
-  color:blue
-  ;
+  color:blue;
 
+}
+@media (max-width: 768px) {
+    #search{
+ 
+ 
+  height: 30px;
+  color:white;
+
+}
 }
 
 #map {
