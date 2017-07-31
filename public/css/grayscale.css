@@ -251,27 +251,48 @@ a:focus {
   margin:0;
   
 }
+#centerBtns{
+position: absolute;
+  top: 7%;
+  right: 4%;
+  left:1%;
+
+}
+
+@media (max-width: 768px) {
+    #centerBtns{
+  position: absolute;
+    top: 2%;
+    right: 4%;
+    left:1%;
+
+  }
+}
+
 #contact{
   padding-top:80px;
 }
 
 #linkedIn{
-position: absolute;
-  top:26px;
-  left:38%;
-  height:36px;
-  padding-top: 6px;
+  
+  padding-top: 10px;
   padding-bottom: auto;
+  line-height: 85%;
+  
 
 }
 #search{
-  
-  position: absolute;
-  top:88px;
-  left:38%;
-  padding-top: 4px;
+ 
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.7%;
+  padding-top: 8px;
   padding-bottom: auto;
-  height:32px;
+  line-height: 68%;
+  height: 30px;
+  color:blue
+  ;
+
 }
 
 #map {
@@ -363,3 +384,4 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
 }
+
