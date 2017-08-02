@@ -1,10 +1,16 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
+ adamMat
 const express = require('express');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 let exphbs = require ('express-handlebars');
+
+var express = require("express");
+var bodyParser = require("body-parser");
+var exphbs = require ('express-handlebars');
+ master
 
 // Sets up the Express App
 // =============================================================
@@ -19,6 +25,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+// Handlebars
+app.engine('handlebars', exphbs({defaultLayout:'main'}));
+app.set('view engine', 'handlebars');
 
 // Static directory
 app.use(express.static(process.cwd() + '/public'));
@@ -47,9 +57,12 @@ db.sequelize.sync({ force: true }).then(function() {
   });
 });
 
+adamMat
 // =============================================================
 // =======================   connection for ORM    ===================
 // =============================================================
 // app.listen(port, function() {
 // 	console.log("LISTENING ON PORT:", port);
 // });
+
+ master
