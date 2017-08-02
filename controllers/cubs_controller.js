@@ -1,30 +1,32 @@
-
 const express = require('express');
 const router = express.Router();
 const cub = require('../models/cub.js');
 const adam = require('../models/adam.js');
 
 
- // at Object.create (/Users/fundaistvan/cub/config/orm.js:51:14)
- //    at Object.create (/Users/fundaistvan/cub/models/cub.js:16:6)
- //    at /Users/fundaistvan/cub/controllers/cubs_controller.js:29:9
+// at Object.create (/Users/fundaistvan/cub/config/orm.js:51:14)
+//    at Object.create (/Users/fundaistvan/cub/models/cub.js:16:6)
+//    at /Users/fundaistvan/cub/controllers/cubs_controller.js:29:9
 
 
-router.get('/', function(req,res){
+router.get('/', function (req, res) {
 
 	res.redirect('/cubs')
 
 });
 
-router.get('/cubs', function(req,res){
+router.get('/cubs', function (req, res) {
 	console.log("Hitting cub get route")
-	cub.all(function(cubData){
-		adam.all(function(adamData) {
-			var hbsObject = { cubs: cubData, adam: adamData };
+	cub.all(function (cubData) {
+		adam.all(function (adamData) {
+			var hbsObject = {
+				cubs: cubData,
+				adam: adamData
+			};
 			console.log(hbsObject);
 			res.render('index', hbsObject);
 		});
-	});	
+	});
 });
 
 //router.post('/cub/create', function (req, res) {
@@ -34,16 +36,16 @@ router.get('/cubs', function(req,res){
 // });
 
 router.post("/", function (req, res) {
-  cub.create([
-    "name", "skilled"
-  ], [
-    req.body.name, req.body.skilled
-  ], function () {
-    res.redirect("/cubs");
-  });
+	cub.create([
+		"name", "skilled"
+	], [
+		req.body.name, req.body.skilled
+	], function () {
+		res.redirect("/cubs");
+	});
 });
 
-router.put('/cubs/update/:id', function(req,res){
+router.put('/cubs/update/:id', function (req, res) {
 
 	console.log("Hitting cub put/update route")
 
@@ -51,19 +53,21 @@ router.put('/cubs/update/:id', function(req,res){
 
 	console.log('condition', condition);
 
-	cub.update({ skilled: req.body.skilled }, condition, function(){
+	cub.update({
+		skilled: req.body.skilled
+	}, condition, function () {
 
-			res.redirect('/cubs');
+		res.redirect('/cubs');
 
-	});	
+	});
 });
 
-router.delete('/cubs/delete/:id', function(req,res){
+router.delete('/cubs/delete/:id', function (req, res) {
 	console.log("Hitting cub delete route")
 
 	var condition = "id = " + req.params.id;
 
-	cub.delete(condition, function(){
+	cub.delete(condition, function () {
 
 		res.redirect('/');
 	});

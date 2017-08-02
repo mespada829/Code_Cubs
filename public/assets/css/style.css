@@ -1,216 +1,205 @@
-body{
+#cf:before, #cf:after {
+    content: "";
+    display: table;
+}
 
-	background-color: #CFEBEA;
-/*background-color: white;
-*/	text-align: center;
+#cf:after {
+    clear: both;
+}
+
+#cf {
+    zoom: 1;
+}
+
+body {
+	background-color: #474747;
+	text-align: center;
 	font-family: sans-serif;
-	
 	position: relative;
-
-}
-#arrow{
-
-	position: absolute;
-	top:350px;
-	left:560px;
+	color: #FFF;
+	padding:2em;
 }
 
-.numOne{
-font-size: 20px;
-top:280px;
-	left:560px;
 
+#image{
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+}
+#container {
+	width: 100%;
 }
 
-li{
 
-	width:100px;
-	display:block;
+.numOne {
+	font-size: 20px;
+	top: 280px;
+	left: 560px;
+}
+
+ul:not(.browser-default) li {
+	display: inline-block;
+}
+
+ul:not(.browser-default) {
+	margin: 0 auto;
+	text-align: center;
+}
+
+li {
+	width: 100px;
+	display: block;
 }
 
 button {
 	background-color: white;
 	color: black;
-	width:60px;
-	padding:2px;
+	width: 60px;
+	padding: 2px;
 }
 
-.addIt{
-width:60px;
-font-size: 12px;
-line-height: 14px;
-margin-top: 0px;
+.addIt {
+	width: 95%;
 }
 
-.removeIt{
-width:60px;
-font-size: 12px;
-line-height: 14px;
-margin-top: 0px;
-
-
-
+.removeIt {
+	width:95%;
 }
 
-.createIt{
+.btn{
+	padding: 0;
+	margin-top: .5em;
+	width:100%;
+}
+.btn-large{
+	width:100%;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+/* .createIt{
 
+} */
+
+.logos {
+	width: 60px;
+	margin-bottom: 0px;
+	margin-top: 1em;
+	background-color: white;
 }
 
-.logos{
-width:60px;
-margin-bottom: 0px;
-background-color: white;
-
-}
-#cubName{
-display: inline;
-float: left;
-
+#cubName {
+	display: inline;
+	float: left;
 }
 
 h1 {
-
 	line-height: 30px;
-	padding:4px;
+	padding: 4px;
 	background-color: #389096;
-	color:white;
+	color: white;
 }
 
-#trigger{
+/* #trigger {
 	background-color: transparent;
-
-	color:black;
+	color: black;
 	width: 130px;
 	height: 130px;
 	border-radius: 10px;
 	font-size: 16px;
 	background-image: url("../img/cubFind.png");
-	background-repeat:no-repeat;
+	background-repeat: no-repeat;
 	background-position: center;
-	text-align:center;
-	padding-top:88px;
-	position:absolute;
-	top:570px;
-	left:550px;
-	z-index: 2;
-}
-#modal5{
+	text-align: center;
+	padding-top: 88px;
+} */
+
+#modal5 {
 	min-height: 500px;
 }
 
-
-h2{
-
-
+h2 {
 	color: black;
 	background-color: white;
 }
 
-.forLogos{
-
-	width:90px;
+.card .forLogos {
+	width: 90px;
 }
 
-.right{
+.right {
 	margin-right: 160px;
-
-
+	float:none !important;
 }
 
-.left{
+.left {
 	margin-left: 160px;
-
+	float:none !important;
 }
 
-.collection{
-
-	margin-left:30%;
-	float:left;
-}
-#exit{
-
-	float:left;
+.collection {
+	margin-left: 30%;
+	float: left;
 }
 
-
+#exit {
+	float: left;
+}
 
 #made {
 	display: inline;
-	float: left;
-	margin-left: 1%;
-	width:400px;
-	
-
+	margin: 0 auto;
+	width: 100%;;
 }
-
 
 #skilled {
-	width:400px;
 	display: inline;
-	float: right;
-	
-	
+    margin: 0 auto;
+    width: 100%;;
 }
 
-
-.logos{
-	width:60px;
+.logos {
+	width: 60px;
 }
 
 #find {
 	position: absolute;
 	bottom: -480px;
 	left: 20%;
-
-
 }
 
-#findIt{
-	position:absolute;
+#findIt {
+	position: absolute;
 	width: 150px;
-	height:80px;
-	top:480px;
-	left:540px;
+	height: 80px;
+	top: 480px;
+	left: 540px;
 	text-align: justify;
-	padding:4px;
+	padding: 4px;
 	font-size: 18px;
-	
 }
 
-li{
-
-	width:900px;
+li {
+	width: 900px;
 }
 
-.profile{
-
+.profile {
 	display: inline;
-	float:left;
+	float: left;
 }
 
-#cubModal{
-
-	float:left;
-	width:250px;
+#cubModal {
+	float: left;
+	width: 250px;
 }
 
-#techName{
-	
-	margin:auto;
-	line-height:30px;
-	font-size:20px;
-	width:100px;
-	
-
+#techName {
+	margin: auto;
+	line-height: 30px;
+	font-size: 20px;
+	width: 100px;
 }
 
-
-#cubLogo {
-	position:absolute;
-	top:20px;
-	left:450px;
-	width:300px;
-	display:inline;
-	float:left;
-	margin-left: 1%;
-}
+ #cubLogo {
+	width: 75%;
+	margin: 0 auto;
+} 

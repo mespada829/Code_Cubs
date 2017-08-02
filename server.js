@@ -1,8 +1,10 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+let exphbs = require ('express-handlebars');
 
 // Sets up the Express App
 // =============================================================
@@ -19,7 +21,18 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(process.cwd() + '/public'));
+app.use(bodyParser.urlencoded({
+	extended:false
+}));
+
+app.use(methodOverride('_method'));
+
+app.engine('handlebars', exphbs({defaultLayout:'main'}));
+app.set('view engine', 'handlebars');
+
+let routes = require('./controllers/cubs_controller.js');
+app.use('/', routes);
 
 // Routes
 // =============================================================
@@ -33,3 +46,10 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
+
+// =============================================================
+// =======================   connection for ORM    ===================
+// =============================================================
+// app.listen(port, function() {
+// 	console.log("LISTENING ON PORT:", port);
+// });
