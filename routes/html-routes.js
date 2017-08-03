@@ -1,15 +1,12 @@
- adamMat
 // <<<<<<< HEAD
 // =======
- master
+
 // *********************************************************************************
 // html-routes.js - this file offers a set of routes for sending users to the various html pages
 // *********************************************************************************
 
- adamMat
 // >>>>>>> 52070143a7f6b4a89d89bbd988e722e2d87d7f01
 
- master
 // Dependencies
 // =============================================================
 var path = require("path");
@@ -18,19 +15,14 @@ var path = require("path");
 // =============================================================
 module.exports = function(app) {
 
-adamMat
-// <<<<<<< HEAD
-=======
- master
+
 
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
   });
- adamMat
-// =======
-=======
 
-master
+
+
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads view.html
@@ -51,8 +43,8 @@ master
   });
 
 };
-adamMat
-// >>>>>>> 52070143a7f6b4a89d89bbd988e722e2d87d7f01
-=======
 
-master
+// >>>>>>> 52070143a7f6b4a89d89bbd988e722e2d87d7f01
+
+
+
