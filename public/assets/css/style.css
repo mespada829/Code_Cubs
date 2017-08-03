@@ -19,6 +19,9 @@ body {
 	color: #FFF;
 	padding:2em;
 }
+#contact{
+	color:black;
+}
 
 
 #image{
@@ -39,6 +42,9 @@ body {
 
 ul:not(.browser-default) li {
 	display: inline-block;
+}
+.title{
+	color:black;
 }
 
 ul:not(.browser-default) {
@@ -99,22 +105,45 @@ h1 {
 	color: white;
 }
 
-/* #trigger {
+#seeTop{
+	line-height: 60px;
 	background-color: transparent;
+	width:100%;
+}
+
+#knows{
+	color:black;
+}
+
+#trigger2 {
+	
 	color: black;
-	width: 130px;
-	height: 130px;
-	border-radius: 10px;
-	font-size: 16px;
+	
+
+	border-radius: 3px;
+
 	background-image: url("../img/cubFind.png");
+	
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: right;
 	text-align: center;
-	padding-top: 88px;
-} */
+	padding:45px;
+	
+	margin-left: 80px;
+	background-color: white;
+	
+} 
+#topRow{
+	margin-top: 60px;
+}
+
+#cardSkills{
+	min-height:300px;
+}
 
 #modal5 {
 	min-height: 500px;
+	background-color: #474747;
 }
 
 h2 {
@@ -187,10 +216,7 @@ li {
 	float: left;
 }
 
-#cubModal {
-	float: left;
-	width: 250px;
-}
+
 
 #techName {
 	margin: auto;
@@ -203,3 +229,78 @@ li {
 	width: 75%;
 	margin: 0 auto;
 } 
+
+#modal5{
+
+
+}
+#modal6{
+
+
+	
+}
+
+#cubModal{
+
+	float:left;
+	width:180px;
+	padding:0;
+}
+
+
+.profile{
+
+	display: inline;
+	float:left;
+}
+#avatar {
+
+	border-style: solid;
+	border-width: 2px;
+	border-color: lightgrey;
+	width:100%;
+
+
+}
+#movie{
+display: inline;
+float:right;
+}
+
+
+.numOne{
+font-size: 20px;
+top:280px;
+left:560px;
+
+}
+
+
+#modal5{
+	min-height: 500px;
+}
+
+
+
+
+.collection{
+
+	margin-left:30%;
+	float:left;
+}
+#exit{
+
+	float:left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
