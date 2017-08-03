@@ -253,7 +253,7 @@ a:focus {
 }
 #centerBtns{
 position: absolute;
-  top: 7%;
+  top: 30%;
   right: 4%;
   left:1%;
 
@@ -290,7 +290,7 @@ position: absolute;
   padding-bottom: auto;
   line-height: 68%;
   height: 30px;
-  color:blue;
+  color:white;
 
 }
 @media (max-width: 768px) {
@@ -326,6 +326,9 @@ position: absolute;
     height: 400px;
     margin-top: 250px;
   }
+  #cc{
+    color: #fb8c00;
+  }
 }
 .btn {
   text-transform: uppercase;
@@ -338,16 +341,18 @@ position: absolute;
 
 }
 .btn-default {
-  border: 1px solid blue;
+  border: 1px solid #fb8c00;
   color: blue;
-  background-color: transparent;
+  background-color: #fb8c00;
+  -webkit-border-radius: 3px 3px 3px 3px;
+  border-radius: 3px 3px 3px 3px;
 }
 .btn-default:hover,
 .btn-default:focus {
-  border: 1px solid blue;
+  border: 1px solid #fb8c00;
   outline: none;
-  color: black;
-  background-color: blue;
+  color: white;
+   background-color: transparent;
 }
 ul.banner-social-buttons {
   margin-top: 0;
