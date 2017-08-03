@@ -16,6 +16,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <!-- Theme CSS -->
     <link href="css/grayscale.css" rel="stylesheet">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="51753611945-4jj820b174bv7oo2n9ialffsbs2deouo.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -68,7 +72,10 @@
         <div class="download-section">
          <div id="centerBtns">
 
-         <a href="" class="btn btn-default btn-lg" id="linkedIn"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name" style="color:white" >Log-in with Linked In</span></a><br>
+         <!-- <a href="" class="btn btn-default btn-lg" id="linkedIn"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name" style="color:white" >Log-in with Linked In</span></a><br> -->
+
+         <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Sign In</div>
+         <a href="#" onclick="signOut();" id="signOut">Sign out</a>
                        
         <a href="/search"><button type="button" class="btn btn-default btn-lg" id="search" >Search for Junior Devs</button></a>
 
