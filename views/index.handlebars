@@ -69,18 +69,28 @@
    <div  class="col  s12 l12">
         {{!-- <i class="material-icons large" id="arrow">arrow_forward</i> --}}
         <a class="btn-large orange darken-1 modal-trigger waves-effect waves-light" href="#modal5" >Find </a>
-      </div>
     </div>
+    </div>
+   
+     
+
+         {{!-----MODAL ----------------------------}} 
+
+        <div id="modal5" class="modal bottom-sheet col s11">
+        <div class="row" id="topRow">
+        
+    <div class="col m3">
+              <img src="/assets/img/codecubsV2.png" alt="cub" id="cubModal" style="width: 460px"> 
     </div>
 
-    <div class="row">
+    <div class="col l8">
+      <a class="btn modal-trigger waves-effect waves-light" href="#modal6" id="trigger2" >  <h6 id="seeTop">Click to see the top candidate </h6></a>
+    </div>
+</div> 
+          <div class="row" >
       <div class="col l12">
-        {{!-----------------------------------------------------------------------------------}} {{!-- ----------------------------
-        MODAL ----------------------------}} {{!-----------------------------------------------------------------------------------}}
-
-        <div id="modal5" class="modal bottom-sheet col s12">
-          <div class="modal-content">
-            <img src="/assets/img/codecubs.png" alt="cub" id="cubModal">
+      <div class="modal-content">
+          
             <ul class="collection">
               {{#each adam}}
               <li class="collection-item avatar" id="avatar" style="height:190px">
@@ -90,41 +100,92 @@
                 <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px">
 
                 <span class="title">Cub Candidate in {{location}}</span>
-                <p><br>{{name}}<br> {{email}}
-                </p>
-                <br>
-                <a href={{glink}} style="clear: left">Github Profile</a> {{#if relocate}}
+                 {{#if relocate}}
                 <h6 style="color:blue" style="clear: left"><em>{{name}} is willing to relocate</em></h6>
-                {{/if}} {{#unless relocate}}
+                {{/if}} 
+                {{#unless relocate}}
                 <h6 style="color:red" style="clear: left"><em>{{name}} would prefer not to relocate</em></h6>
-                {{/unless}} {{/each}}
+                {{/unless}}
+                <p id="contact"><br>{{name}}<br> {{email}}
+                </p>
+              
+                <br>
+                <a href={{glink}} style="clear: left">Github Profile</a> 
+
+                {{/each}}
               </li>
             </ul>
           </div>
-          <div class="modal-footer">
+          
             <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
-          </div>
+          
+           <div id="modal6" class="modal bottom-sheet">
+         <div class="modal-content" id="secondModal">
+         <h3 id="knows">Your top candidate knows:</h3><br>
+          {{#each cubs}}
+          {{#if skilled}}
+          <img class="logos" src={{this.imgUrl}}>
+          {{/if}}
+          {{/each}}
+         </div>
+         <div class="modal-footer">
+            <a href="#modal6" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
+         </div>
+
         </div>
       </div>
     </div>
   </div>
 
-  <script type="text/javascript">
-    $(document).ready(function () {
+      <script type="text/javascript">
 
-      $('#trigger').on('click', function () {
-        console.log("Trigger was clicked.");
+        let techList;
 
-        $("li").each(function (index) {
-          console.log(index + ": " + $(this).text());
-        });
-      });
+        $(document).ready(function(techList){
 
-      $('#modal5').modal();
+          
+
+          $('#trigger').on('click', function(){
+            console.log("Trigger was clicked.");
+          });
+
+
+          $('#trigger2').on('click', function(techList){
+                  console.log("Trigger was clicked.");
+                  $('#secondModal').append(techList)
+          }); 
+
+            $( ".skilledList" ).each(function( index, element) {
+           
+              techList = [];
+
+              $(this).children().each(function (element) {
+                const technology = $(this).attr('data-tech');
+                techList.push(technology);
+
+              });
+              
+         console.log(techList);
+
+         $.AJAX
+
+
+
+
 
     });
-  </script>
+          $('#modal5').modal();
+          $('#modal6').modal();
 
+
+
+  });
+ 
+   </script>
+
+    
+
+     
 
   {{!-- </body>
 
