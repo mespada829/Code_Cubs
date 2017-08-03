@@ -74,8 +74,15 @@
 
          <!-- <a href="" class="btn btn-default btn-lg" id="linkedIn"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name" style="color:white" >Log-in with Linked In</span></a><br> -->
 
-         <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Sign In</div>
-         <a href="#" onclick="signOut();" id="signOut">Sign out</a>
+<div class="row">
+        <div class="col l6">
+             <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark">Sign In</div>
+        </div>
+
+        <div class="col l6" id="signOutDiv">
+            <a href="#" onclick="signOut();" type="button" class="btn btn-default btn-lg" id="signOut">Sign out</a>
+        </div>
+</div>
                        
         <a href="/search"><button type="button" class="btn btn-default btn-lg" id="search" >Search for Junior Devs</button></a>
 
