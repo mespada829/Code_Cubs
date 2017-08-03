@@ -29,6 +29,20 @@ router.get('/cubs', function (req, res) {
 	});
 });
 
+router.get('/api/adam', function (req, res) {
+	console.log("Hitting cub get route")
+	cub.all(function (cubData) {
+		adam.all(function (adamData) {
+			var hbsObject = {
+				cubs: cubData,
+				adam: adamData
+			};
+			console.log(hbsObject);
+			res.json(hbsObject);
+		});
+	});
+});
+
 //router.post('/cub/create', function (req, res) {
 //   cub.insertOne(req.body.cub_name, function() {
 //     res.redirect('/index');
@@ -73,5 +87,21 @@ router.delete('/cubs/delete/:id', function (req, res) {
 	});
 
 });
+
+
+
+    router.post("/api/adam", function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    });
+
+
+router.get('/api/adam', function (req, res) {
+  adam.findAll({})
+    .then(function (results) {
+      res.json(results);
+  	  // console.log(results);
+    })
+    .catch(console.error);
+})
 
 module.exports = router;
