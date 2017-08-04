@@ -329,6 +329,20 @@ position: absolute;
   #cc{
     color: #fb8c00;
   }
+.sLogo{
+  padding: 0;
+}
+  .sLogo li{
+    list-style: none;
+    display: inline;
+}
+.col {
+  margin-bottom: 1em;
+}
+.sLogo li img{
+width: 72px;
+height:72px;
+}
 }
 .btn {
   text-transform: uppercase;
