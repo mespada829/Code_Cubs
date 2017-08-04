@@ -329,6 +329,18 @@ position: absolute;
   #cc{
     color: #fb8c00;
   }
+.sLogo{
+  padding: 0;
+}
+  .sLogo li{
+    list-style: none;
+    display: inline;
+}
+
+.sLogo li img{
+width: 72px;
+height:72px;
+}
 }
 .btn {
   text-transform: uppercase;
@@ -342,7 +354,7 @@ position: absolute;
 }
 .btn-default {
   border: 1px solid #fb8c00;
-  color: blue;
+  color: white;
   background-color: #fb8c00;
   -webkit-border-radius: 3px 3px 3px 3px;
   border-radius: 3px 3px 3px 3px;
