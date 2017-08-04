@@ -87,13 +87,9 @@ router.delete('/cubs/delete/:id', function (req, res) {
 	});
 
 });
-
-
-
     router.post("/api/adam", function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
     });
-
 
 router.get('/api/adam', function (req, res) {
   adam.findAll({})
