@@ -72,8 +72,6 @@
     </div>
     </div>
    
-     
-
          {{!-----MODAL ----------------------------}} 
 
         <div id="modal5" class="modal bottom-sheet col s11">
@@ -141,18 +139,24 @@
 
         let techList;
 
-        $(document).ready(function(techList){
-
-          
+        $(document).ready(function(techList){         
 
           $('#trigger').on('click', function(){
             console.log("Trigger was clicked.");
-          });
-
+           });   
 
           $('#trigger2').on('click', function(techList){
                   console.log("Trigger was clicked.");
-                  $('#secondModal').append(techList)
+                  $('#secondModal').append(techList);
+                  // let url= process.env + ""
+             $.ajax({
+                url: '/api/adam',
+                method: 'GET'
+             })
+             .done(function (adams) {
+                console.log(adams);
+             })
+             .fail(console.error);
           }); 
 
             $( ".skilledList" ).each(function( index, element) {
@@ -167,25 +171,13 @@
               
          console.log(techList);
 
-        
-
-
-
-
-
     });
           $('#modal5').modal();
           $('#modal6').modal();
 
-
-
   });
  
    </script>
-
-    
-
-     
 
   {{!-- </body>
 
