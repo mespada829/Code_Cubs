@@ -335,6 +335,7 @@ position: absolute;
   .sLogo li{
     list-style: none;
     display: inline;
+    margin-right: 1em;
 }
 .col {
   margin-bottom: 1em;
