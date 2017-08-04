@@ -49,7 +49,7 @@
                <ul class="right skilledList" style="list-style:none">
             {{#each cubs}} {{#if this.skilled}}
             <li data-tech={{this.techName}} class="forLogos">
-              
+
               <img class="logos" src={{this.imgUrl}}><br>
               {{this.techName}}<br>
               <form action="cubs/update/{{this.id}}?_method=PUT" method="POST">
@@ -71,52 +71,54 @@
         <a class="btn-large orange darken-1 modal-trigger waves-effect waves-light" href="#modal5" >Find </a>
     </div>
     </div>
-   
-         {{!-----MODAL ----------------------------}} 
+
+
+
+         {{!-----MODAL ----------------------------}}
 
         <div id="modal5" class="modal bottom-sheet col s11">
         <div class="row" id="topRow">
-        
+
     <div class="col m3">
-              <img src="/assets/img/codecubsV2.png" alt="cub" id="cubModal" style="width: 460px"> 
+              <img src="/assets/img/codecubsV2.png" alt="cub" id="cubModal" style="width: 460px">
     </div>
 
     <div class="col l8">
       <a class="btn modal-trigger waves-effect waves-light" href="#modal6" id="trigger2" >  <h6 id="seeTop">Click to see the top candidate </h6></a>
     </div>
-</div> 
+</div>
           <div class="row" >
       <div class="col l12">
       <div class="modal-content">
-          
+
             <ul class="collection">
               {{#each adam}}
               <li class="collection-item avatar" id="avatar" style="height:190px">
                 <div id="movie">
-                  <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                 {{!--  <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> --}}
                 </div>
                 <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px">
 
                 <span class="title">Cub Candidate in {{location}}</span>
                  {{#if relocate}}
                 <h6 style="color:blue" style="clear: left"><em>{{name}} is willing to relocate</em></h6>
-                {{/if}} 
+                {{/if}}
                 {{#unless relocate}}
                 <h6 style="color:red" style="clear: left"><em>{{name}} would prefer not to relocate</em></h6>
                 {{/unless}}
                 <p id="contact"><br>{{name}}<br> {{email}}
                 </p>
-              
+
                 <br>
-                <a href={{glink}} style="clear: left">Github Profile</a> 
+                <a href={{glink}} style="clear: left">Github Profile</a>
 
                 {{/each}}
               </li>
             </ul>
           </div>
-          
+
             <a href="#modal5" id="exit" class="modal-action modal-close waves-effect waves-green btn-flat">Exit</a>
-          
+
            <div id="modal6" class="modal bottom-sheet">
          <div class="modal-content" id="secondModal">
          <h3 id="knows">Your top candidate knows:</h3><br>
@@ -138,12 +140,12 @@
       <script type="text/javascript">
 
         let techList;
-
-        $(document).ready(function(techList){         
+        let candidates;
+        $(document).ready(function(techList){
 
           $('#trigger').on('click', function(){
             console.log("Trigger was clicked.");
-           });   
+           });
 
           $('#trigger2').on('click', function(techList){
                   console.log("Trigger was clicked.");
@@ -153,14 +155,66 @@
                 url: '/api/adam',
                 method: 'GET'
              })
-             .done(function (adams) {
-                console.log(adams);
+             .done(function (data) {
+                          console.log(data);
+                          console.log(data.adam);
+                          candidates = data.adam;
+                    // =====================================================================================
+                                    const candidateScores = candidates.map(function (candidate) {
+                                      const skilllist = [];
+
+                                      for (var property in candidate) {
+                                          if (property != 'id' && property != 'relocate' && candidate[property] === 1) {
+                                              skilllist.push(property);
+                                          }
+                                      }
+
+                                      const skillset = new Set(skilllist);
+                                      let totalSkills = 0;
+                                      for (let i = 0; i < techList.length; i += 1) {
+                                          const techList = techList[i];
+                                          if (skillset.has(techList)) {
+                                              totalSkills += 1;
+                                          }
+                                      }
+                                      return {candidate, totalSkills}
+                                      console.log(totalSkills);
+                                    })
+                    // ========================================================================================
+                        function findBestCandidates (scores) {
+                        let bestCandidate;
+                        let bestSkillCount = -Infinity;
+
+                        for (let i = 0; i < scores.length; i += 1) {
+                          const candidate = scores[i];
+
+                          if (candidate.totalSkills > bestSkillCount) {
+                              // If this is weird, log the object
+                              bestCandidate = candidate.candidate;
+                              bestScore = candidate.totalSkills;
+                          }
+                        }
+
+                        return bestCandidate;
+                    }
+                    // ========================================================================================
+                    // 3. Take the max candidate, and throw away everything else
+                     let bestCandidate = findBestCandidates(candidateScores);
+
+                    // 4. Now, plop bestCandidate into modal
+                    raiseModalWith(bestCandidate);
+
+                    function raiseModalWith (candidate) {
+                       console.log(candidate);
+                       
+                    }
+                    // ========================================================================================
              })
              .fail(console.error);
-          }); 
+          });
 
             $( ".skilledList" ).each(function( index, element) {
-           
+
               techList = [];
 
               $(this).children().each(function (element) {
@@ -168,15 +222,16 @@
                 techList.push(technology);
 
               });
-              
+
          console.log(techList);
+
 
     });
           $('#modal5').modal();
           $('#modal6').modal();
 
   });
- 
+
    </script>
 
   {{!-- </body>
