@@ -10,6 +10,9 @@
 #cf {
     zoom: 1;
 }
+#winLogo{
+	float:left;
+}
 
 body {
 	background-color: #474747;
@@ -21,6 +24,14 @@ body {
 }
 #contact{
 	color:black;
+}
+
+#logofield {
+
+margin-right: 28px;
+display: inline;
+float: left;
+
 }
 
 

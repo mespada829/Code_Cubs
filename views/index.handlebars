@@ -109,18 +109,18 @@
 
            <div id="modal6" class="modal bottom-sheet">
          <div class="modal-content" id="secondModal">
-        {{!--  <h3 id="knows">Your top candidate knows:</h3><br>
+         <p id="logoField"><h3 id="knows">Your top candidate:</h3></p>
           {{#each cubs}}
           {{#if skilled}}
-          <img class="logos" src={{this.imgUrl}}>
+          <img class="logos" src={{this.imgUrl}} >
           {{/if}}
-          {{/each}} --}}
+          {{/each}}
           {{#each winner}}
-        
+          
            <div id="movie">
                   <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
-                <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px">
+                <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px" style="margin-left:20px">
 
                 <span class="title">{{name}} in {{location}}</span>
           
