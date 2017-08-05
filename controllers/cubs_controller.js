@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cub = require('../models/cub.js');
 const adam = require('../models/adam.js');
+const winner = require('../models/winner.js');
 
 
 // at Object.create (/Users/fundaistvan/cub/config/orm.js:51:14)
@@ -19,14 +20,17 @@ router.get('/cubs', function (req, res) {
 	console.log("Hitting cub get route")
 	cub.all(function (cubData) {
 		adam.all(function (adamData) {
+			winner.all(function (winnerData){
 			var hbsObject = {
 				cubs: cubData,
-				adam: adamData
+				adam: adamData,
+				winner: winnerData
 			};
 			console.log(hbsObject);
 			res.render('index', hbsObject);
 		});
 	});
+});
 });
 
 router.get('/api/adam', function (req, res) {

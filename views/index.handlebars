@@ -1,16 +1,4 @@
-{{!--
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>Code Cubs</title>
-  <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-</head>
-
-<body> --}}
 
   <div class="container" id="container">
 
@@ -95,7 +83,7 @@
               {{#each adam}}
               <li class="collection-item avatar" id="avatar" style="height:190px">
                 <div id="movie">
-                 {{!--  <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> --}}
+                  <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                 </div>
                 <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px">
 
@@ -121,11 +109,33 @@
 
            <div id="modal6" class="modal bottom-sheet">
          <div class="modal-content" id="secondModal">
-         <h3 id="knows">Your top candidate knows:</h3><br>
+        {{!--  <h3 id="knows">Your top candidate knows:</h3><br>
           {{#each cubs}}
           {{#if skilled}}
           <img class="logos" src={{this.imgUrl}}>
           {{/if}}
+          {{/each}} --}}
+          {{#each winner}}
+        
+           <div id="movie">
+                  <iframe src={{video}} width="200" height="160" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+                <img class="circle" id="profile" src={{photo}} style="height:130px; width:130px">
+
+                <span class="title">{{name}} in {{location}}</span>
+          
+                
+               
+                <h6 style="color:red" style="clear: left"><em>{{name}} would prefer not to relocate</em></h6>
+               s
+                <p id="contact"><br>{{name}}<br> {{email}}
+                </p>
+
+                <br>
+                <a href={{glink}} style="clear: left">Github Profile</a>
+                 <h6 style="color:red" style="clear: left"><em>(Is not willing to relocate)</em></h6>
+
+        
           {{/each}}
          </div>
          <div class="modal-footer">
@@ -234,6 +244,4 @@
 
    </script>
 
-  {{!-- </body>
-
-</html> --}}
+  
