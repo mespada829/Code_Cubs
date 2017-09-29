@@ -4,7 +4,7 @@
  A Platform to give junior devs a competitive edge and employers the opportunity to find top junior talent.
  <br>
  
- [Link to Gif App](https://guarded-plains-42185.herokuapp.com/)  
+ [Link to Code Cubs](https://guarded-plains-42185.herokuapp.com/)  
  
 
 <img src="codecubs.jpg" width="745"> 
